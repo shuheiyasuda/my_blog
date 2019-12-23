@@ -1,0 +1,10 @@
+.content
+  .content__left
+    .content__left__image
+      = image_tag post.image.url
+  .content__right
+    .content__right__title
+    = link_to post_path(post.id) do
+      = post.title
+    .content__right__created
+      = post.created_at
