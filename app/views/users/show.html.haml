@@ -2,5 +2,8 @@
   .contents__user
     = @user.nickname
     のブログ
-  - @posts.each do |post|
-    = render "posts/posts", post: post
+    - if @user.posts
+      - @posts.each do |post|
+        = render "posts/posts", post: post
+    - else
+      %p 投稿はありません
