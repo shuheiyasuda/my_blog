@@ -1,0 +1,185 @@
+.field_with_errors {
+  display: inline;
+}
+
+#icon__label{
+  display: block;
+  text-align: center;
+}
+
+.fa-user-plus{
+  padding: 50px;
+  font-size: 230px;
+}
+
+.icon__field{
+  display: none;
+}
+
+.field__input{
+  background-color: #eeeeee;
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.fields{
+  text-align: center;
+}
+
+#field__require{
+  background-color:#BB0000;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+#field__require2{
+  background-color:#BB0000;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.field__label{
+  position: relative;
+}
+
+.fa-signature{
+  position: absolute;
+  right: 15px;
+  top: 1px;
+}
+
+.fa-envelope{
+  position: absolute;
+  right: 17px;
+  top: 1px;
+}
+
+.fa-key{
+  position: absolute;
+  right: 17px;
+  top: 1px;
+}
+
+.actions{
+  margin-top: 15px;
+}
+
+.fields__title{
+  padding-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.field__name{
+  margin-top: 70px;
+}
+
+
+
+.field__fname{
+  background-color: #eeeeee;
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  padding-left: 10px;
+}
+
+.label__fname{
+  position: relative;
+}
+
+.field__lname{
+  background-color: #eeeeee;
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  padding-left: 10px;
+
+}
+
+.label__lname{
+  position: relative;
+}
+
+.field__year{
+  background-color: #eeeeee;
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  -webkit-appearance: none;
+  padding-left: 10px;
+
+}
+
+.label__year{
+  position: relative;
+}
+
+.fa-angle-down{
+  position: absolute;
+  right: 20px;
+  top: -3px;
+  font-size: 23px;
+}
+
+.field__birth{
+  margin-top:15px
+}
+
+.field__month{
+  background-color: #eeeeee;
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  -webkit-appearance: none;
+  padding-left: 10px;
+
+}
+
+.label__month{
+  position: relative;
+}
+
+.field__date{
+  background-color: #eeeeee;
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  -webkit-appearance: none;
+  padding-left: 10px;
+
+}
+
+.label__date{
+  position: relative;
+}
+
+.field__number{
+  margin-top: 15px;
+}
+
+.field__phone{
+  margin-top: 15px;
+  width: 333.5px;
+  height: 40px;
+  padding-left: 10px;
+  background-color: #eeeeee;
+}
+
+.label__phone{
+  position: relative;
+}
+
+.fa-phone{
+  position: absolute;
+  top: -1px;
+  right: 15px;
+}

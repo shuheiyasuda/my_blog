@@ -1,0 +1,17 @@
+.content
+  .content__left
+    .content__left__image
+      - if post.image?
+        = image_tag post.image.url, size:"200x200", id:"circle__pic"
+      - else
+        = image_tag "no-image.png"
+  .content__right
+    .content__right__title
+    = link_to post_path(post.id), id:"content__title" do
+      = post.title
+    .content__bottom
+      .content__bottom__name
+        = link_to user_path(post.user) do
+          = post.user.nickname
+      .content__bottom__created
+        = post.created_at

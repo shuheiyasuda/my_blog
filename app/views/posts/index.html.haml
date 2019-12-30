@@ -2,16 +2,4 @@
   .contents__title
     ALL BLOGS
   - @posts.each do |post|
-    .content
-      .content__left
-        .content__left__image
-          - if post.image?
-            = image_tag post.image.url, size:"200x200", id:"circle__pic"
-          - else
-            = image_tag "no-image.png"
-      .content__right
-        .content__right__title
-        = link_to post_path(post.id) do
-          = post.title
-        .content__right__created
-          = post.created_at
+    = render "posts", post: post

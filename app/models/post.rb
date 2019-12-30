@@ -1,5 +1,7 @@
 class Post < ApplicationRecord
   mount_uploader :image, ImageUploader
+  belongs_to :user
+
   validates :title, :category, :content, presence: true 
 
   enum category: { "LIFE": 1,

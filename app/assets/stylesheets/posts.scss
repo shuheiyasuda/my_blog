@@ -66,6 +66,17 @@ body{
           border-radius: 50%;
         }
       }
+      &__bottom{
+        display: flex;
+        font-size: 15px;
+        color: #999;
+        &__created{
+          margin-left: 20px;
+        }
+      }
+      #content__title{
+        text-decoration: none;
+      }
       #circle__pic{
         height: 55px;
         width: 55px;
@@ -169,6 +180,29 @@ body{
       font-size: 15px;
       color: #999;
       text-align: center;
+    }
+    .post__manage{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      &__edit{
+        display: block;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color:#55c500;
+        padding: 0 10px;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+      &__delete{
+        display: block;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color:#55c500;
+        padding: 0 10px;
+        text-decoration: none;
+        margin-right: 10px;
+      }
     }
     .post__image{
       text-align: center;

@@ -15,6 +15,16 @@
         = link_to root_path, class:"header__title__top" do
           MyBlog
       .header__right
-        = link_to new_post_path, class:"header__right__btn" do
-          NewPost
+        - if user_signed_in?
+          = link_to user_path(current_user), class:"header__right__btn" do
+            = current_user.nickname
+          = link_to new_post_path, class:"header__right__btn" do
+            NewPost
+          = link_to destroy_user_session_path, method: :delete, class:"header__right__btn" do
+            SignOut
+        - else
+          = link_to new_user_session_path, class:"header__right__btn" do
+            SignIn
+          = link_to signup_regisrations_path, class:"header__right__btn" do
+            SignUp
     = yield

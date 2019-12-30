@@ -1,0 +1,43 @@
+.contents
+  = form_with model:@user, url:regisrations_path, method: :post, local: true do |f|
+    .fields
+      .fields__title
+        Step2
+      .field__name
+        名前（全角)
+        %span#field__require
+          必須
+        .field__name__last
+          = f.label :last_name, class:"label__fname" do
+            %i.fas.fa-signature.sign
+            = f.text_field :last_name, autofocus: true, placeholder:"例)山田",class:"field__lname" 
+        .field__name__first
+          = f.label :first_name, class:"label__fname" do
+            %i.fas.fa-signature.sign
+            = f.text_field :first_name, autofocus: true, placeholder:"例)タロウ", class:"field__fname"
+      .field__birth
+        生年月日
+        %span#field__require
+          必須
+        .field__birth__year
+          = f.label :year_id, class:"label__year" do
+            %i.fas.fa-angle-down
+            = f.collection_select :year_id, Year.all, :id, :name, {prompt: "年"}, {class:"field__year"} 
+        .field__birth__month
+          = f.label :month_id, class:"label__month" do
+            %i.fas.fa-angle-down
+            = f.collection_select :month_id, Month.all, :id, :name, {prompt:"月"}, {class:"field__month"} 
+        .field__birth__date
+          = f.label :date_id, class:"label__date" do
+            %i.fas.fa-angle-down
+            = f.select :date_id, User.dates.keys, {prompt:"日"}, {class:"field__date"}
+      .field__number
+        電話番号
+        %span#field__require2
+          任意
+        .field__number__phone
+          = f.label :phone_number, class:"label__phone" do
+            %i.fas.fa-phone
+            = f.text_field :phone_number, placeholder:"09000000000", class:"field__phone"
+      .actions
+        = f.submit "DONE"

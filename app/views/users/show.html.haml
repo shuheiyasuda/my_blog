@@ -1,0 +1,6 @@
+.contents
+  .contents__user
+    = @user.nickname
+    のブログ
+  - @posts.each do |post|
+    = render "posts/posts", post: post
