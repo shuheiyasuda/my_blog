@@ -1,14 +1,17 @@
 .contents
   .post__title
     = @post.title
+  .post__category
+    カテゴリー :
+    = @post.category
   .post__created_at
     = @post.created_at
   .post__manage
     - if user_signed_in? && current_user.id == @post.user_id
       = link_to edit_post_path(@post.id), class:"post__manage__edit" do
-        Edit
+        編集
       = link_to post_path(@post.id), method: :delete, class:"post__manage__delete" do
-        Delete
+        削除
   .post__image
     - if @post.image?
       = image_tag @post.image.url, size:"400x400", class:"post__image__pic"

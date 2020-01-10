@@ -1,6 +1,6 @@
 .contents
   .post__title
-    EDIT
+    編集
   
   = form_with model:@post, class:"form", local: true do |f|
     = f.text_field :title, placeholder:"TITLE", class:"form__title"
@@ -9,4 +9,4 @@
       %i.far.fa-image
       = f.file_field :image, class:"form__image"
     = f.text_area :content, placeholder:"CONTENT", class:"form__content"
-    = f.submit "DONE", class:"form__btn"
+    = f.submit "投稿", class:"form__btn"

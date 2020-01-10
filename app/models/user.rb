@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :posts
   belongs_to_active_hash :year
   belongs_to_active_hash :month
-  # belongs_to_active_hash :date
 
   enum date: {"1日": 1,"2日": 2, "3日": 3, "4日": 4, "5日": 5, "6日": 6, "7日": 7, "8日": 8, "9日": 9, "10日": 10,
               "11日": 11,"12日": 12, "13日": 13, "14日": 14, "15日": 15, "16日": 16, "17日": 17, "18日": 18, "19日": 19, "20日": 20,
@@ -17,12 +16,12 @@ class User < ApplicationRecord
               "31日": 31}
 
 
-  validates :nickname, presence: true, uniqueness: true
+  validates :nickname, presence: true, uniqueness: true, length: { maximum: 6 }
   validates :email, presence: true, uniqueness: true
   validates :phone_number, uniqueness: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :year_id, presence: true
-  validates :month_id, presence: true
-  validates :date_id, presence: true
+  validates :year_id, presence: {message:"を選択して下さい"}
+  validates :month_id, presence: {message:"を選択して下さい"}
+  validates :date_id, presence: {message:"を選択して下さい"}
 end

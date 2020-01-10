@@ -48,20 +48,25 @@ class RegisrationsController < ApplicationController
       phone_number: user_params[:phone_number]
     )
 
-    if @user.save
-      session.delete(:icon)
-      session.delete(:nickname)
-      session.delete(:email)
-      session.delete(:password)
-      session.delete(:last_name)
-      session.delete(:first_name)
-      session.delete(:year_id)
-      session.delete(:month_id)
-      session.delete(:date_id)
-      session.delete(:phone_number)
-      redirect_to root_path
+    if @user.errors.messages.blank? && @user.errors.details.blank?
+      if @user.save
+        sign_in User.find(@user.id) unless user_signed_in?
+        session.delete(:icon)
+        session.delete(:nickname)
+        session.delete(:email)
+        session.delete(:password)
+        session.delete(:last_name)
+        session.delete(:first_name)
+        session.delete(:year_id)
+        session.delete(:month_id)
+        session.delete(:date_id)
+        session.delete(:phone_number)
+        redirect_to root_path
+      else
+        render :signup_2
+      end
     else
-      action :signup_2
+      render :signup_2
     end
   end
 

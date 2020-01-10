@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
+  # before_action :authenticate_user!, expect: [:index]
 
   def index
     @posts = Post.includes(:user)
@@ -10,8 +11,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to root_path
+    @post = Post.create(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render action: :new
+    end
   end
 
   def show
@@ -33,12 +38,7 @@ class PostsController < ApplicationController
     post.destroy
     redirect_to root_path
   end
-
-
-
-
-
-
+  
   private
 
   def post_params

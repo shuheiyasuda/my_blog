@@ -1,24 +1,37 @@
-# README
+# usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|email|string|null: false|uniqueness: true|
+|password|string|null: false|uniqueness: true|
+|nickname|string|null: false|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|year_id|integer|null: false|
+|month_id|integer|null: false|
+|date_id|integer|null: false|
+|phone_number|string|null: false|uniqueness: true|
+|icon|string|
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+### Association
+- has_many :posts
+- belongs_to_active_hash :year
+-  belongs_to_active_hash :month
 
-* Ruby version
 
-* System dependencies
+# postsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false,foreign_key: true|
+|category|integer|null: false|
+|title|string|null: false|
+|image|text|null: false|
+|content|text|null: false|
 
-* Configuration
 
-* Database creation
+### Associtaion
+- belongs_to :user
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# yearモデル
+# monthモデル
+- 静的なデータのためアクティブハッシュを使用しました。

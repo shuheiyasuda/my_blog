@@ -1,10 +1,9 @@
 @font-face{
-  font-family: "myfont";
-  src: url("fonts/odstemplik/odstemplik.otf") format("opentype"), url("fonts/odstemplik/odstemplikBold.otf") format("opentype");
+  font-family: 'Londrina Shadow', cursive;
 }
 
-@font-face{
-  font-family: 'Londrina Shadow', cursive;
+.formError{
+  color:red;
 }
 
 body{
@@ -40,7 +39,7 @@ body{
   .contents{
     margin: 30px auto 0;
     background-color: #fff;
-    height: 680px;
+    height: 650px;
     width: 70%;
     overflow: scroll;
     &__title{
@@ -57,6 +56,10 @@ body{
       padding: 10px;
       border-bottom: 1px solid #f6f6f6;
       display: flex;
+      #content__name{
+        color: #999999;
+        font-size: 16px;
+      }
       &__left{
         padding-right: 20px;
         &__image{
@@ -76,6 +79,9 @@ body{
       }
       #content__title{
         text-decoration: none;
+        font-weight: bold;
+        color: black;
+        font-size: 18px;
       }
       #circle__pic{
         height: 55px;
@@ -115,6 +121,9 @@ body{
         text-align: center;
       }
     }
+    #content__name{
+      text-decoration: none;
+    }
     .form{
       width: 85%;
       height: 100%;
@@ -124,6 +133,7 @@ body{
         display: block;
         width: 100%;
         height: 50px;
+        padding-left: 10px;
       }
       &__category{
         width: 85%;
@@ -163,6 +173,8 @@ body{
         display: table-caption;
         max-width: 100%;
         min-height: 50%;
+        padding-left: 10px;
+        padding-top: 10px;
       }
       &__btn{
         display: block;
@@ -174,6 +186,10 @@ body{
       padding-top: 30px;
       text-align: center;
       font-size: 30px;
+      font-weight: bold;
+    }
+    .post__category{
+      text-align: center;
       font-weight: bold;
     }
     .post__created_at{
@@ -189,7 +205,7 @@ body{
         display: block;
         border-radius: 5px;
         color: #ffffff;
-        background-color:#55c500;
+        background-color:#BB0000;
         padding: 0 10px;
         text-decoration: none;
         margin-right: 10px;
@@ -198,7 +214,7 @@ body{
         display: block;
         border-radius: 5px;
         color: #ffffff;
-        background-color:#55c500;
+        background-color: #BB0000;
         padding: 0 10px;
         text-decoration: none;
         margin-right: 10px;

@@ -7,9 +7,17 @@
   text-align: center;
 }
 
-.fa-user-plus{
-  padding: 50px;
-  font-size: 230px;
+.icon__text{
+  font-size: 16px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.fa-smile{
+  padding: 25px 40px;
+  font-size: 170px;
+  border: solid 1px;
+  margin-top: 20px;
 }
 
 .icon__field{
@@ -18,7 +26,7 @@
 
 .field__input{
   background-color: #eeeeee;
-  margin-top: 15px;
+  margin-top: 10px;
   width: 333.5px;
   height: 40px;
   padding-left: 10px;
@@ -26,6 +34,21 @@
 
 .fields{
   text-align: center;
+}
+
+.field__nickname{  
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.field__email{
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.field__password{
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 #field__require{
@@ -73,13 +96,15 @@
 }
 
 .fields__title{
-  padding-top: 30px;
   font-size: 30px;
   font-weight: bold;
+  padding-top: 30px;
+  text-align: center;
 }
 
 .field__name{
-  margin-top: 70px;
+  margin-top: 30px;
+  font-weight: bold;
 }
 
 
@@ -131,7 +156,8 @@
 }
 
 .field__birth{
-  margin-top:15px
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 .field__month{
@@ -164,6 +190,7 @@
 
 .field__number{
   margin-top: 15px;
+  font-weight: bold;
 }
 
 .field__phone{

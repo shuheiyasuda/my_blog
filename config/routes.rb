@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to:"posts#index"
-  resources :posts, expect: :index
+  resources :posts, except: :index
 
   resources :regisrations, only: [:create] do
     collection do
@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show]
+  resources :categories, only: [:show]
 end

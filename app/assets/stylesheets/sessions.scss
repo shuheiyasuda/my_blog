@@ -1,0 +1,33 @@
+.login{
+  text-align: center;
+  padding-top: 30px;
+}
+.contents h2{
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.field__address{
+  margin-top: 15px;
+  font-weight: bold;
+  margin-bottom: -15px;
+}
+
+.field__pass{
+  margin-top: 15px;
+  font-weight: bold;
+  margin-bottom: -15px;
+}
+
+.actions__new{
+  margin-top: 35px
+}
+
+.new{
+  margin-top: 20px;
+  &__btn{
+    text-decoration: none;
+  }
+}

@@ -1,21 +1,42 @@
 .contents
-  .contents__title 新規登録 Step1
+  .contents__title ユーザー新規登録
   = form_with model:@user, url:signup_validates_regisrations_path, local: true do |f|
     = f.label :icon, id:"icon__label" do
-      %i.fas.fa-user-plus
+      %i.far.fa-smile
+        .icon__text
+          タップしてアイコンを選択
       = f.file_field :icon, class:"icon__field"
     .fields
-      .field
-        = f.label :nickname, class:"field__label" do
-          %i.fas.fa-signature
-          = f.text_field :nickname, autofocus: true, placeholder:"例)ブログ太郎",class:"field__input" 
-      .field
-        = f.label :email, class:"field__label" do
-          %i.far.fa-envelope
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC,携帯どちらでも可", class:"field__input"
-      .field
-        = f.label :password, class:"field__label" do
-          %i.fas.fa-key
-          = f.password_field :password, autocomplete: "new-password", placeholder:"7文字以上の英数字",class:"field__input" 
+      .field__nickname
+        ニックネーム
+        %span#field__require
+          必須
+      = f.label :nickname, class:"field__label" do
+        %i.fas.fa-signature
+        = f.text_field :nickname, autofocus: true, placeholder:"例）ブログ太郎",class:"field__input"
+      - if @user.errors.any?
+        %ul
+          %li.formError= @user.errors.full_messages_for(:nickname).first
+
+      .field__email
+        メールアドレス
+        %span#field__require
+          必須
+      = f.label :email, class:"field__label" do
+        %i.far.fa-envelope
+        = f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC、携帯どちらでも可", class:"field__input"
+      - if @user.errors.any?
+        %ul
+          %li.formError= @user.errors.full_messages_for(:email).first
+      .field__password
+        パスワード
+        %span#field__require
+          必須
+      = f.label :password, class:"field__label" do
+        %i.fas.fa-key
+        = f.password_field :password, autocomplete: "new-password", placeholder:"６文字以上の英数字",class:"field__input" 
+      - if @user.errors.any?
+        %ul
+          %li.formError= @user.errors.full_messages_for(:password).first
       .actions
         = f.submit "次へ"

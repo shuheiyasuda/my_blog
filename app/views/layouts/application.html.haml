@@ -19,12 +19,12 @@
           = link_to user_path(current_user), class:"header__right__btn" do
             = current_user.nickname
           = link_to new_post_path, class:"header__right__btn" do
-            NewPost
+            投稿する
           = link_to destroy_user_session_path, method: :delete, class:"header__right__btn" do
-            SignOut
+            ログアウト
         - else
           = link_to new_user_session_path, class:"header__right__btn" do
-            SignIn
+            ログイン
           = link_to signup_regisrations_path, class:"header__right__btn" do
-            SignUp
+            新規登録
     = yield

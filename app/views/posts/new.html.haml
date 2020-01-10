@@ -1,12 +1,25 @@
 .contents
   .post__title
-    NewPost
+    投稿する
   
   = form_with model:@post, class:"form", local: true do |f|
-    = f.text_field :title, placeholder:"TITLE", class:"form__title"
-    = f.select :category, Post.categories.keys, {prompt: "Select a Category"}, {class:"form__category"}
+    = f.text_field :title, placeholder:"タイトル", class:"form__title"
+    -if @post.errors.any?
+      %ul
+        %li.formError= @post.errors.full_messages_for(:title).first
+        
+    = f.select :category, Post.categories.keys, {prompt: "カテゴリーを選択してください"}, {class:"form__category"}
+
     = f.label :image, id: "image__label" do
       %i.far.fa-image
       = f.file_field :image, class:"form__image"
-    = f.text_area :content, placeholder:"CONTENT", class:"form__content"
-    = f.submit "DONE", class:"form__btn"
+    -if @post.errors.any?
+      %ul
+        %li.formError= @post.errors.full_messages_for(:category).first
+
+    = f.text_area :content, placeholder:"本文", class:"form__content"
+    -if @post.errors.any?
+      %ul
+        %li.formError= @post.errors.full_messages_for(:content).first
+        
+    = f.submit "投稿する", class:"form__btn"

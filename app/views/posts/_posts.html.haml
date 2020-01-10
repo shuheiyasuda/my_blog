@@ -11,7 +11,7 @@
       = post.title
     .content__bottom
       .content__bottom__name
-        = link_to user_path(post.user) do
+        = link_to user_path(post.user), id:"content__name" do
           = post.user.nickname
       .content__bottom__created
         = post.created_at
